@@ -6,6 +6,8 @@
 }
 html,
 body {
+  width: 100%;
+  height: 100%;
   line-height: 1.4;
   font-weight: 300;
   font-family: roboto, sans-serif;
@@ -16,13 +18,14 @@ button {
   color: rgb(255, 255, 255);
   background-color: rgb(244, 178, 55);
   font-size: 14px;
+  cursor: pointer;
 }
 button:hover {
   opacity: 0.7;
   transition: 0.2s ease-in-out;
 }
-/* Navigation */
 
+/* Navigation */
 nav {
   padding: 0 80px;
   margin-bottom: 35px;
@@ -35,10 +38,9 @@ nav {
   align-items: center;
 }
 .navbar .logo img {
-  padding: 5px;
   width: 146px;
   height: 75px;
-  margin-bottom: 7px;
+  object-fit: contain;
 }
 .bar_icon {
   font-size: 30px;
@@ -46,35 +48,40 @@ nav {
 /* hero Section */
 .hero {
   display: flex;
-  gap: 150px;
-  justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+}
+.hero img {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
 }
 .hero_content {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+  width: 40%;
 }
 .tag {
   background-color: #149f39;
   padding: 5px 10px;
   color: white;
+  width: 31%;
   align-self: start;
 }
 .hero_content h1 {
   font-size: 71px;
-  width: 500px;
   font-family: roboto, sans-serif;
   font-weight: 1000;
 }
 .hero_content p {
-  letter-spacing: 2px;
+  text-align: justify;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
   font-family: robot, sans-serif;
+  margin-bottom: 1rem;
 }
-/* Features Section */
 
+/* Features Section */
 .features {
   margin-top: 100px;
   display: flex;
@@ -112,7 +119,9 @@ nav {
 .grid_image {
   display: grid;
   gap: 5px;
-  padding: 60px;
+  width: 1000px;
+  margin: 0 auto;
+  padding: 50px 0 50px 0;
   grid-template-areas:
     "I1 I1 I2 I3"
     "I1 I1 I2 I7"
@@ -172,6 +181,8 @@ footer {
 .news_letter input {
   width: 200px;
   height: 20px;
+  padding: 0.8rem 1rem;
+  border: none;
   margin-bottom: 10px;
 }
 .footer_container {
@@ -191,38 +202,47 @@ footer {
     width: 500px;
   }
   .hero {
-    width: 500px;
     flex-direction: column;
-  }
-  .img1 {
-    display: flex;
     justify-content: center;
-    align-items: center;
   }
-  .img1 img {
-    width: 80%;
+  .hero img {
+    width: 200px;
+    height: 200px;
+  }
+  .tag {
+    width: 100%;
   }
   .hero_content {
-    text-align: left;
-    width: 500px;
-    gap: 10px;
-    padding: 20px;
+    text-align: center;
   }
   .hero_content h1 {
     font-size: 32px;
+    text-align: center;
   }
   .features {
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
     flex-direction: column;
   }
   .features img {
     width: 100px;
+    margin: 0 auto;
   }
   .feature {
     flex-direction: column;
   }
   .grid_image {
-    grid-template-columns: repeat(6, 1fr);
-    padding: 10px;
+    width: 100%;
+    place-items: center;
+    grid-template-areas:
+      "I1"
+      "I2"
+      "I3"
+      "I4"
+      "I5"
+      "I6"
+      "I7";
   }
   .grid_image img {
     width: 200px;
